@@ -17,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "developer": "Kaj Berg, Mattis Erkensten, Senad Velagic, Tim Malmberg, Tomas Ek",
   "eslintConfig": {
     "extends": [
       "react-app",
