@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const DefaultPage = () => {
+const DefaultPage = () => {
     return (
         <div>
             <h1>404</h1>
         </div>
     )
 }
+
+export default DefaultPage;
