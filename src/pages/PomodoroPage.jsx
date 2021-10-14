@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const PomodoroPage = () => {
+const PomodoroPage = () => {
     return (
         <div>
             <h1>Pomodoro</h1>
         </div>
     )
 }
+
+export default PomodoroPage;
