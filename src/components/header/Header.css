@@ -1,0 +1,24 @@
+.header--container {
+    background-color: var(--color-off-white);
+}
+
+.header--wrapper {
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header--logo {
+    width: 20%;
+}
+
+.header--nav {
+    display: flex;
+}
+
+.header--nav li + li {
+    margin-left: 20px;
+}
