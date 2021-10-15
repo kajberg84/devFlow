@@ -1,4 +1,5 @@
 .header--container {
+    background-color: var(--color-off-white);
 }
 
 .header--wrapper {
