@@ -13,10 +13,15 @@
 
 .header--logo {
     width: 20%;
+    cursor: pointer;
 }
 
 .header--nav {
     display: flex;
+}
+
+.header--nav li {
+    cursor: pointer;
 }
 
 .header--nav li + li {
