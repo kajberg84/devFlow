@@ -1,14 +1,9 @@
 // import './App.css';
 import './utils/global/css/Global.css';
-import { Routing } from './routes/Routing';
+import { Main } from './routes/Routing';
 
 function App() {
-  return (
-    <Routing>
-      
-      
-    </Routing>
-  );
+  return <Main></Main>;
 }
 
 export default App;
