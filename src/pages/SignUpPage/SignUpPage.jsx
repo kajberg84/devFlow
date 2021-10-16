@@ -14,21 +14,19 @@ export const SignUpPage = () => {
             <div className="content--wrapper">
                 <div className="promptText--wrapper">
                        {/* /* LÖS UTAN BR*/ }
-                    <h1>Register account <br /> devFlow.</h1>
-                    <p className="p-large">Already have an account?</p>
-                    <button onClick={() => history.push(RoutingPath.signInPage)}>Login</button>
+                    <h1>Create Account</h1>
+                    <p className="p-large">Do you already have an account?</p>
+                    <p className ="blueLinkText" onClick={() => history.push(RoutingPath.signInPage)}>Sign In</p>
                 </div>
                 <div className="signIn--inputs">
-                    <input type="email" className="inputfield" name="email" placeholder="email..." />
-                    <input type="password" className="inputfield" name="password" placeholder="password.." />
+                    <input type="email" className="inputfield" name="email" placeholder="E-mail..." />
+                    <input type="password" className="inputfield" name="password" placeholder="Password.." />
+                    <input type="confirmPassword" className="inputfield" name="confirmPassword" placeholder="Confirm Password.." />
                 </div>
-                <div className="signIn--btn-wrap">
-                <a href="#">Forgot password?</a>
                 <Button
                 customCssClass="btn-primary signIn--button"
-                text="Sign In"
+                text="Create Account"
               />
-              </div>
               </div>
             </div>
         </div>
