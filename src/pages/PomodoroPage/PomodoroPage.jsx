@@ -1,10 +1,13 @@
 import React from 'react'
 import './PomodoroPage.css'
+import { Timer } from '../../components/timer/Timer'
 
 export const PomodoroPage = () => {
     return (
-        <div>
-            <h1>Pomodoro</h1>
+        <div className="pomodoro-container">
+            <div className="pomodoro-wrapper">
+                <Timer />
+            </div>
         </div>
     )
 }
