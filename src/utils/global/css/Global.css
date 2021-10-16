@@ -92,8 +92,23 @@ a {
   color: #000;
 }
 
+/* Button Styling */
+
 button {
   font-size: 1.6rem;
+}
+
+.btn {
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-red-primary);
+  color: var(--color-off-white);
 }
 
 /* Img base style */
