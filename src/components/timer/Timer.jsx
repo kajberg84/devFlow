@@ -10,17 +10,24 @@ export const Timer = () => {
     if (isActive) {
       const interval = setInterval(() => {
         setTimer((timer) => timer - 1);
-      }, 1000);
+      }, 100);
       return () => clearInterval(interval);
     }
   }, [isActive]);
 
+  if (timer === 0 && isActive) { 
+    setIsActive(false);
+    console.log("Pomodoro done")
+  }
+
   return (
-    <div>
+    <div className="timer-wrapper">
       <h1>Pomodoro</h1>
       <h2>{timer}</h2>
-      <button onClick={() => setIsActive(true)}> Starta</button>
-      <button onClick={() => setIsActive(false)}> Stoppa</button>
+      <button className="btn" onClick={() => setIsActive(true)}> Starta</button>
+      <button className="btn" onClick={() => setIsActive(false)}> Stoppa</button>
+      <button className="btn" onClick={() => setTimer(5)}> Rast</button>
+      <button className="btn" onClick={() => setTimer(25)}> Återställ</button>
     </div>
   );
 };
