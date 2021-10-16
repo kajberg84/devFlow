@@ -18,6 +18,7 @@ export const SignInPage = () => {
                     <p className="p-large">Don't have an account?</p>
                     <button onClick={() => history.push(RoutingPath.signUpPage)}>Create Account</button>
                 </div>
+                {/* använd iaf state form får du om du vill*/ }
                 <div className="signIn--inputs">
                     <input type="email" className="inputfield" name="email" placeholder="email..." />
                     <input type="password" className="inputfield" name="password" placeholder="password.." />
