@@ -1,7 +1,12 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import './SignInPage.css'
 import { Button } from '../../components/button/Button'; 
+
 export const SignInPage = (props) => {
+
+    const history = useHistory();
+
     return (
         <div className="signIn--wrapper">
             <div className="signIn--container">
