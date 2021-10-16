@@ -2,8 +2,9 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import './SignInPage.css'
 import { Button } from '../../components/button/Button'; 
+import RoutingPath from "../../routes/RoutingPath";
 
-export const SignInPage = (props) => {
+export const SignInPage = () => {
 
     const history = useHistory();
 
@@ -12,9 +13,10 @@ export const SignInPage = (props) => {
             <div className="signIn--container">
             <div className="content--wrapper">
                 <div className="promptText--wrapper">
+                    {/* /* LÖS UTAN BR*/ }
                     <h1>Sign in to <br /> devFlow.</h1>
                     <p className="p-large">Don't have an account?</p>
-                    <a href="#">Create Account</a>
+                    <button onClick={() => history.push(RoutingPath.signUpPage)}>Create Account</button>
                 </div>
                 <div className="signIn--inputs">
                     <input type="email" className="inputfield" name="email" placeholder="email..." />
