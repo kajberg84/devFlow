@@ -1,11 +1,10 @@
-a {
+.p--link {
     color: #0074C2;
+    cursor: pointer;
 }
 .content--wrapper {
-    
     margin: 80px;
 }
-
 .signIn--wrapper {
     width: 100%;
     height: 100%;
@@ -22,13 +21,16 @@ a {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
+
 .promptText--wrapper {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
 }
-
-.signIn--inputs {
+.signIn--title {
+    width: 500px;
+}
+.form--inputs {
     display: flex;
     flex-direction: column;
 }
