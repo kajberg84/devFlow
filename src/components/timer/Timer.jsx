@@ -22,12 +22,12 @@ export const Timer = () => {
 
   return (
     <div className="timer-wrapper">
-      <h1>Pomodoro</h1>
-      <h2>{timer}</h2>
-      <button className="btn" onClick={() => setIsActive(true)}> Starta</button>
-      <button className="btn" onClick={() => setIsActive(false)}> Stoppa</button>
-      <button className="btn" onClick={() => setTimer(5)}> Rast</button>
-      <button className="btn" onClick={() => setTimer(25)}> Återställ</button>
+      <h1 className="timer--title">Pomodoro</h1>
+      <h2 className="timer--timer">{timer}</h2>
+      <button className="btn timer--btn" onClick={() => setIsActive(true)}> Starta</button>
+      <button className="btn timer--btn" onClick={() => setIsActive(false)}> Stoppa</button>
+      <button className="btn timer--btn" onClick={() => setTimer(5)}> Rast</button>
+      <button className="btn timer--btn" onClick={() => setTimer(25)}> Återställ</button>
     </div>
   );
 };
