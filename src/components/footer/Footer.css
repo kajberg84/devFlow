@@ -1,0 +1,60 @@
+.footer--container {
+  margin: 75px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.footer--nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form--wrapper {
+  background-color: var(--color-light-grey);
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.form--wrapper input[type="password"],
+input[type="text"] {
+  width: 353px;
+  margin-top: 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: medium;
+  padding: 10px;
+  font-family: Poppins;
+}
+
+.form--wrapper button {
+  width: 50%;
+  margin-top: 10px;
+  font-family: poppins;
+}
+
+.bottom--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer--logo {
+  width: 20%;
+}
+
+.socials--container img {
+  width: 3rem;
+  margin: 5px;
+}
+
+.terms--privacy--container a:nth-child(2) {
+  margin: 20px;
+}

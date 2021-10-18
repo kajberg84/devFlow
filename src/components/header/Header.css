@@ -1,30 +1,30 @@
 .header--container {
-    background-color: var(--color-off-white);
+  background-color: var(--color-off-white);
 }
 
 .header--wrapper {
-    display: flex;
-    height: 100px;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header--logo {
-    width: 20%;
-    cursor: pointer;
+  width: 20%;
+  cursor: pointer;
 }
 
 .header--nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header--nav li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .header--nav li + li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
