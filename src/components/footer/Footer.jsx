@@ -1,11 +1,72 @@
-import React from 'react'
-import './Footer.css'
+import React from "react";
+import "./Footer.css";
+import { Button } from "../button/Button";
+import RoutingPath from "../../routes/RoutingPath";
+import Logo from "../../utils/images/logo.svg";
+import Twitter from "../../utils/icons/Twitter.svg";
+import Facebook from "../../utils/icons/Facebook.svg";
+import LinkedIn from "../../utils/icons/LinkedIn.svg";
 
 export const Footer = () => {
-    return (
-        <div>
-            <h1>Footer</h1>
-        </div>
-    )
-}
+  return (
+    <div className="footer--container">
+      <div className="footer--nav">
+        <ul>
+          <h5>Product</h5>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+        </ul>
 
+        <ul>
+          <h5>Information</h5>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+        </ul>
+
+        <ul>
+          <h5>Company</h5>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+        </ul>
+        <form className="form--container">
+          <div className="form--wrapper">
+            <h5>Sign Up</h5>
+            <input type="text" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <Button
+              customCssClass="btn-primary"
+              text="Sign Up"
+              targetPage={RoutingPath.signUpPage}
+              className="form--button"
+            />
+          </div>
+        </form>
+      </div>
+      <hr />
+      <div className="bottom--container">
+        <img src={Logo} alt="logo" className="footer--logo" />
+        <div className="terms--privacy--container">
+          <ul>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Cookies</a>
+          </ul>
+        </div>
+        <div className="socials--container">
+          <a href="#">
+            <img src={LinkedIn} alt="LinkedIn" />
+          </a>
+          <a href="#">
+            <img src={Facebook} alt="Facebook" />
+          </a>
+          <a href="#">
+            <img src={Twitter} alt="Twitter" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
