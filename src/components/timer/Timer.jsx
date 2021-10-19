@@ -6,7 +6,6 @@ export const Timer = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-
     if (isActive) {
       const interval = setInterval(() => {
         setTimer((timer) => timer - 1);
@@ -15,19 +14,31 @@ export const Timer = () => {
     }
   }, [isActive]);
 
-  if (timer === 0 && isActive) { 
+  if (timer === 0 && isActive) {
     setIsActive(false);
-    console.log("Pomodoro done")
+    console.log("Pomodoro done");
   }
+
+  
 
   return (
     <div className="timer-wrapper">
       <h1 className="timer--title">Pomodoro</h1>
       <h2 className="timer--timer">{timer}</h2>
-      <button className="btn timer--btn" onClick={() => setIsActive(true)}> Starta</button>
-      <button className="btn timer--btn" onClick={() => setIsActive(false)}> Stoppa</button>
-      <button className="btn timer--btn" onClick={() => setTimer(5)}> Rast</button>
-      <button className="btn timer--btn" onClick={() => setTimer(25)}> Återställ</button>
+      <button className="btn timer--btn" onClick={() => setIsActive(true)}>
+        Starta
+      </button>
+      <button className="btn timer--btn" onClick={() => setIsActive(false)}>
+        Stoppa
+      </button>
+      <button className="btn timer--btn" onClick={() => setTimer(5)}>
+        Rast
+      </button>
+      <button className="btn timer--btn" onClick={() => setTimer(25)}>
+        Återställ
+      </button>
     </div>
   );
+
+  
 };
