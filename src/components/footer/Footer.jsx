@@ -45,7 +45,7 @@ export const Footer = () => {
           </div>
         </form>
       </div>
-      <hr />
+      <hr className="line"/>
       <div className="bottom--container">
         <img src={Logo} alt="logo" className="footer--logo" />
         <div className="terms--privacy--container">
