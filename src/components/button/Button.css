@@ -4,6 +4,7 @@
     outline: none;
     border-radius: 50px;
     cursor: pointer;
+    max-width: 200px;
 }
 
 .btn-primary {

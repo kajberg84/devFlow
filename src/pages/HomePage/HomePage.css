@@ -1,15 +1,21 @@
 .main-container {
-  max-width: 1200px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 auto;
+  background-color: var(--color-off-white)
 }
 
-.main-wrapper, .mainImage {
-  width: 50%;
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  display: flex;
+  align-items: center;
 }
 
 .mainImage {
-  width: 50%;
+  width: 70%;
+}
+
+h1 {
+  margin-bottom: 20px;
 }
