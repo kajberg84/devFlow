@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./SignInPage.css";
 import { Button } from "../../components/button/Button";
@@ -7,15 +7,26 @@ import RoutingPath from "../../routes/RoutingPath";
 export const SignInPage = () => {
   const history = useHistory();
 
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  const [userEmail, setUserEmail] = useState(() => {
+    const localData = localStorage.getItem("username");
+    return localData;
+  });
+  const [userPassword, setUserPassword] = useState(() => {
+    const localData = localStorage.getItem("password");
+    return localData;
+  });
 
-  const handleSignIn = () => { 
-    console.log("username: ", username);
-    console.log("password: ", password);
-  }
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const signInUserEmail = event.target[0].value;
+    const signInuserPassword = event.target[1].value;
 
-  handleSignIn();
+    if (signInUserEmail === userEmail && signInuserPassword === userPassword) {
+      history.push(RoutingPath.dashboardPage);
+    } else {
+      alert("Invalid Email or Password");
+    }
+  };
 
   return (
     <div className="signIn--container">
@@ -29,7 +40,7 @@ export const SignInPage = () => {
           Create Account
         </p>
 
-        <form className="form--inputs">
+        <form onSubmit={handleSignIn} className="form--inputs">
           <input
             type="email"
             className="inputfield"
@@ -44,7 +55,6 @@ export const SignInPage = () => {
           />
           <p href="#">Forgot password?</p>
           <Button customCssClass="btn-primary signIn--button" text="Sign In" />
-          <button onClick={() => handleSignIn}>Sign In</button>
         </form>
       </div>
     </div>

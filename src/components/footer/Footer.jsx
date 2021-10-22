@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Footer.css";
 import { Button } from "../button/Button";
 import RoutingPath from "../../routes/RoutingPath";
@@ -8,6 +9,30 @@ import Facebook from "../../utils/icons/Facebook.svg";
 import LinkedIn from "../../utils/icons/LinkedIn.svg";
 
 export const Footer = () => {
+
+  const history = useHistory();
+
+  const [userEmail, setUserEmail] = useState(() => {
+    const localData = localStorage.getItem("username");
+    return localData;
+  });
+  const [userPassword, setUserPassword] = useState(() => {
+    const localData = localStorage.getItem("password");
+    return localData;
+  });
+
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const signInUserEmail = event.target[0].value;
+    const signInuserPassword = event.target[1].value;
+
+    if (signInUserEmail === userEmail && signInuserPassword === userPassword) {
+      history.push(RoutingPath.dashboardPage);
+    } else {
+      alert("Invalid Email or Password");
+    }
+  };
+
   return (
     <div className="footer--container">
       <div className="footer--nav">
@@ -31,14 +56,14 @@ export const Footer = () => {
           <li>Lorem Ipsum</li>
           <li>Lorem Ipsum</li>
         </ul>
-        <form className="form--container">
+        <form onSubmit={handleSignIn} className="form--container">
           <div className="form--wrapper">
-            <h5>Sign Up</h5>
+            <h5>Sign In</h5>
             <input type="text" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <Button
               customCssClass="btn-primary"
-              text="Sign Up"
+              text="Sign In"
               targetPage={RoutingPath.signUpPage}
               className="form--button"
             />
