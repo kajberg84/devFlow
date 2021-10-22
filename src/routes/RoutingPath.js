@@ -2,6 +2,7 @@ const homePage = '/';
 const pomodoroPage = '/pomodoro'
 const signInPage = '/sign-in'
 const signUpPage = '/sign-up'
+const dashboardPage = '/dashboard'
 
 
 export default {
@@ -9,4 +10,5 @@ export default {
     pomodoroPage,
     signInPage,
     signUpPage,
+    dashboardPage
  }

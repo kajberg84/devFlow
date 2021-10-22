@@ -1,35 +1,24 @@
-import React from "react";
-import "./SignUpPage.css";
-import "../SignInPage/SignInPage.css";
-import { Button } from "../../components/button/Button";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import RoutingPath from "../../routes/RoutingPath";
+import { UserContext } from "../../utils/provider/UserProvider";
+import "./SignUpPage.css";
+import "../SignInPage/SignInPage.css";
 
 export const SignUpPage = () => {
   const history = useHistory();
-  return (
-    // <div className="signIn--wrapper">
-    //     <div className="signIn--container">
-    //     <div className="content--wrapper">
-    //         <div className="promptText--wrapper">
-    //                {/* /* LÖS UTAN BR*/ }
-    //             <h1>Create Account</h1>
-    //             <p className="p-large">Do you already have an account?</p>
-    //             <p className ="blueLinkText" onClick={() => history.push(RoutingPath.signInPage)}>Sign In</p>
-    //         </div>
-    //         <div className="signIn--inputs">
-    //             <input type="email" className="inputfield" name="email" placeholder="E-mail..." />
-    //             <input type="password" className="inputfield" name="password" placeholder="Password.." />
-    //             <input type="confirmPassword" className="inputfield" name="confirmPassword" placeholder="Confirm Password.." />
-    //         </div>
-    //         <Button
-    //         customCssClass="btn-primary signIn--button"
-    //         text="Create Account"
-    //       />
-    //       </div>
-    //     </div>
-    // </div>
+  const [username, setUsername] = useState(); // byta till useContext här?
+  const [password, setPassword] = useState(); // byta till useContext här?
+  const [authUser, setAuthUser] = useContext(UserContext);
 
+  const login = () => {
+    setAuthUser(username);
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    history.push("/dashboard");
+  };
+
+  return (
     <div className="signIn--container">
       <div className="signIn--card">
         <h1 className="signIn--title">Create Account</h1>
@@ -44,25 +33,29 @@ export const SignUpPage = () => {
 
         <form className="form--inputs">
           <input
-            type="email"
+            onChange={(event) => setUsername(event.target.value)}
+            type="text"
             className="inputfield"
             name="email"
             placeholder="E-mail..."
           />
           <input
             type="password"
+            onChange={(event) => setPassword(event.target.value)}
             className="inputfield"
             name="password"
             placeholder="Password.."
           />
           <input
-            type="confirmPassword"
+            type="password"
             className="inputfield"
             name="confirmPassword"
             placeholder="Confirm Password.."
           />
-          <p href="#">Forgot password?</p>
-          <Button customCssClass="btn-primary signIn--button" text="Sign In" />
+          <p>Forgot password?</p>
+          <button className="btn btn-primary" onClick={() => login()}>
+            Sign Up
+          </button>
         </form>
       </div>
     </div>

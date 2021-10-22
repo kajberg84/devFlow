@@ -7,6 +7,16 @@ import RoutingPath from "../../routes/RoutingPath";
 export const SignInPage = () => {
   const history = useHistory();
 
+  const username = localStorage.getItem("username");
+  const password = localStorage.getItem("password");
+
+  const handleSignIn = () => { 
+    console.log("username: ", username);
+    console.log("password: ", password);
+  }
+
+  handleSignIn();
+
   return (
     <div className="signIn--container">
       <div className="signIn--card">
@@ -34,6 +44,7 @@ export const SignInPage = () => {
           />
           <p href="#">Forgot password?</p>
           <Button customCssClass="btn-primary signIn--button" text="Sign In" />
+          <button onClick={() => handleSignIn}>Sign In</button>
         </form>
       </div>
     </div>
