@@ -16,6 +16,7 @@ export const Header = () => {
 
         <nav>
           <ul className="header--nav">
+          <li className="header--nav-item" onClick={() => history.push(RoutingPath.todoPage)}>To-Do</li>
             <li className="header--nav-item" onClick={() => history.push(RoutingPath.pomodoroPage)}>Pomodoro</li>
             <li>
               <Button
