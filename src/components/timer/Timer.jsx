@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Alarm from '../../utils/sounds/alarm.mp3'
 import "./Timer.css";
 
+
+const audio = new Audio(Alarm);
 export const Timer = () => {
   const [timer, setTimer] = useState(25);
   const [isActive, setIsActive] = useState(false);
@@ -15,11 +18,11 @@ export const Timer = () => {
   }, [isActive]);
 
   if (timer === 0 && isActive) {
+    audio.play();
     setIsActive(false);
     console.log("Pomodoro done");
   }
 
-  
 
   return (
     <div className="timer-wrapper">
