@@ -30,7 +30,6 @@ export const Timer = () => {
   const openSettings = () => {
     setSettingsOpen(!settingsOpen);
     setIsActive(false);
-    // setTimeOutIsActive(false);
   };
 
   const handleTimerSettings = () => {
