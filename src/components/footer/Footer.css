@@ -58,6 +58,7 @@
 }
 
 .line {
-  border: 1px solid rgba(195, 195, 195, 0.404);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.185);
   border-radius: 25px;
+  outline: none;
 }

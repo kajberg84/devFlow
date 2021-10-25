@@ -1,31 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./SignInPage.css";
 import { Button } from "../../components/button/Button";
 import RoutingPath from "../../routes/RoutingPath";
+import { UserContext } from "../../utils/provider/UserProvider";
 
 export const SignInPage = () => {
   const history = useHistory();
+  const [username, setUsername] = useState(); 
+  const [password, setPassword] = useState(); 
+  const [authUser, setAuthUser] = useContext(UserContext);
 
-  const [userEmail, setUserEmail] = useState(() => {
-    const localData = localStorage.getItem("username");
-    return localData;
-  });
-  const [userPassword, setUserPassword] = useState(() => {
-    const localData = localStorage.getItem("password");
-    return localData;
-  });
-
-  const handleSignIn = (event) => {
-    event.preventDefault();
-    const signInUserEmail = event.target[0].value;
-    const signInuserPassword = event.target[1].value;
-
-    if (signInUserEmail === userEmail && signInuserPassword === userPassword) {
-      history.push(RoutingPath.dashboardPage);
-    } else {
-      alert("Invalid Email or Password");
-    }
+  const login = () => {
+    setAuthUser(username);
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    history.push("/dashboard");
   };
 
   return (
@@ -40,21 +30,25 @@ export const SignInPage = () => {
           Create Account
         </p>
 
-        <form onSubmit={handleSignIn} className="form--inputs">
+        <form className="form--inputs">
           <input
             type="email"
+            onChange={(event) => setUsername(event.target.value)}
             className="inputfield"
             name="email"
             placeholder="email..."
           />
           <input
             type="password"
+            onChange={(event) => setPassword(event.target.value)}
             className="inputfield"
             name="password"
             placeholder="password.."
           />
           <p href="#">Forgot password?</p>
-          <Button customCssClass="btn-primary signIn--button" text="Sign In" />
+          <button className="btn btn-primary" onClick={() => login()}>
+            Sign In
+          </button>
         </form>
       </div>
     </div>
