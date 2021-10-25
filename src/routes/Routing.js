@@ -10,6 +10,7 @@ import { DashboardPage } from "../pages/DashboardPage/DashboardPage";
 import { TodoPage } from "../pages/TodoPage/TodoPage";
 import { Header } from "../components/header/Header";
 import { Footer } from "../components/footer/Footer";
+import { SignedInHeader } from "../components/signedinheader/SignedInHeader";
 import { UserContext } from "../utils/provider/UserProvider";
 import { useHistory } from "react-router-dom";
 
@@ -21,21 +22,14 @@ export const Main = (props) => {
     setAuthUser(localStorage.getItem("username"));
   };
 
-
   const logout = () => {
     localStorage.removeItem("username");
     setAuthUser(false);
-    // history.push(RoutingPath.homePage);
   };
 
   const displayHeader = () => {
     if (authUser || authenticatedUser()) {
-      return (
-        <div>
-          <h2>AuthUser</h2>
-          <button onClick={logout}>Logout</button>
-        </div>
-      );
+      return <SignedInHeader />;
     } else {
       return <Header />;
     }
