@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Logo from "../../utils/images/logo.svg";
-import { Button } from "../button/Button";
 import RoutingPath from "../../routes/RoutingPath";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../utils/provider/UserProvider";

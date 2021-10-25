@@ -19,7 +19,7 @@ export const Footer = () => {
     setAuthUser(username);
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
-    history.push("/dashboard");
+    history.push(RoutingPath.dashboardPage);
   };
 
   return (

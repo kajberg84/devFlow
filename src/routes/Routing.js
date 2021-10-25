@@ -11,6 +11,7 @@ import { TodoPage } from "../pages/TodoPage/TodoPage";
 import { Header } from "../components/header/Header";
 import { Footer } from "../components/footer/Footer";
 import { SignedInHeader } from "../components/signedinheader/SignedInHeader";
+import { SignedInFooter } from "../components/signedinfooter/SignedInFooter";
 import { UserContext } from "../utils/provider/UserProvider";
 import { useHistory } from "react-router-dom";
 
@@ -35,9 +36,16 @@ export const Main = (props) => {
     }
   };
 
+  const displayFooter = () => {
+    if (authUser || authenticatedUser()) {
+      return <SignedInFooter />;
+    } else {
+      return <Footer />;
+    }
+  }
+
   return (
     <Router>
-      {/* <Header /> */}
       {displayHeader()}
       {props.children}
       <Switch>
@@ -53,7 +61,7 @@ export const Main = (props) => {
         <Route exact path={RoutingPath.todoPage} component={TodoPage} />
         <Route exact path="*" component={DefaultPage} />
       </Switch>
-      <Footer />
+      {displayFooter()}
     </Router>
   );
 };
