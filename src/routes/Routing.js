@@ -14,7 +14,6 @@ import { SignedInHeader } from "../components/signedinheader/SignedInHeader";
 import { SignedInFooter } from "../components/signedinfooter/SignedInFooter";
 import { UserContext } from "../utils/provider/UserProvider";
 import { useHistory } from "react-router-dom";
-import SettingsComponent from "../components/settingscomponent/SettingsComponent";
 
 export const Main = (props) => {
   const history = useHistory();
@@ -49,7 +48,6 @@ export const Main = (props) => {
     <Router>
       {displayHeader()}
       {props.children}
-      <SettingsComponent />
       <Switch>
         <Route exact path={RoutingPath.homePage} component={HomePage} />
         <Route exact path={RoutingPath.pomodoroPage} component={PomodoroPage} />
