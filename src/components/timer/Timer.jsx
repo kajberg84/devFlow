@@ -30,11 +30,6 @@ export const Timer = () => {
   const openSettings = () => {
     setSettingsOpen(!settingsOpen);
     setIsActive(false);
-    // setTimeOutIsActive(false);
-  };
-
-  const handleTimerSettings = () => {
-    console.log("kossa");
   };
 
   const changeTimer = (value) => {
@@ -64,7 +59,7 @@ export const Timer = () => {
       </button>
       {settingsOpen && (
         <div className="settings">
-          <form onSubmit={handleTimerSettings}>
+          <form>
             Time:
             <input
               className="timer--input"
