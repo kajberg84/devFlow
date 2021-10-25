@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./Footer.css";
-import { Button } from "../button/Button";
 import RoutingPath from "../../routes/RoutingPath";
 import Logo from "../../utils/images/logo.svg";
 import Twitter from "../../utils/icons/Twitter.svg";
