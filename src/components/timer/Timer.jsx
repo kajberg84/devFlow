@@ -12,7 +12,7 @@ export const Timer = () => {
     if (isActive) {
       const interval = setInterval(() => {
         setTimer((timer) => timer - 1);
-      }, 100);
+      }, 1000);
       return () => clearInterval(interval);
     }
   }, [isActive]);
