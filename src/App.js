@@ -4,10 +4,11 @@ import "./utils/global/css/Global.css";
 import { Main } from "./routes/Routing";
 import { UserProvider } from "./utils/provider/UserProvider";
 
+
 function App() {
   return (
     <UserProvider>
-      <Main></Main>
+        <Main></Main>
     </UserProvider>
   );
 }
