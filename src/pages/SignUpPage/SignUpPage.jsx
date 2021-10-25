@@ -34,7 +34,7 @@ export const SignUpPage = () => {
         <form className="form--inputs">
           <input
             onChange={(event) => setUsername(event.target.value)}
-            type="text"
+            type="email"
             className="inputfield"
             name="email"
             placeholder="E-mail..."
