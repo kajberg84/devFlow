@@ -1,0 +1,28 @@
+/* main style slider */
+.settings-slider{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: #fafafa;
+  transform: translateX(-100%);
+  transition: 0.2s ease;
+  z-index:25;
+}
+
+.settings-slider.settings-open {
+  transform: translateX(0);
+}
+
+/* wrapper */
+.settings-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-wrapper ul li {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}

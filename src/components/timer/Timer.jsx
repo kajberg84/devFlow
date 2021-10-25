@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import Alarm from '../../utils/sounds/alarm.mp3'
 import "./Timer.css";
-
+import { UserContext } from "../../utils/provider/UserProvider";
 
 const audio = new Audio(Alarm);
 export const Timer = () => {
   const [timer, setTimer] = useState(25);
   const [isActive, setIsActive] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useContext(UserContext);
 
   useEffect(() => {
     if (isActive) {
@@ -27,6 +28,7 @@ export const Timer = () => {
   return (
     <div className="timer-wrapper">
       <h1 className="timer--title">Pomodoro</h1>
+
       <h2 className="timer--timer">{timer}</h2>
       <button className="btn timer--btn" onClick={() => setIsActive(true)}>
         Starta
@@ -39,6 +41,12 @@ export const Timer = () => {
       </button>
       <button className="btn timer--btn" onClick={() => setTimer(25)}>
         Återställ
+      </button>
+      <button 
+      className="btn timer--btn"
+      onClick={() => setSettingsOpen(!settingsOpen)}
+      >
+        Settings
       </button>
     </div>
   );

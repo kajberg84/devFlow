@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 
 export const SettingsContext = createContext(null);
 
@@ -6,16 +6,14 @@ export const SettingsContext = createContext(null);
  * Creating settings Router
  *
  * @param {*} { children }
- * @return {*} - Returning a User Provider
+ * @return {*} - Returning a settingsProvider
  */
- export const SettingsProvider = ({ children }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+ const SettingsProvider = ({ children }) => {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <SettingsContext.Provider
       value={{
-        menuState: [menuOpen, setMenuOpen],
         settingsState: [settingsOpen, setSettingsOpen],
       }}
     >
@@ -23,3 +21,5 @@ export const SettingsContext = createContext(null);
     </SettingsContext.Provider>
   );
 };
+
+export default SettingsProvider;

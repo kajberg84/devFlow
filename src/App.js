@@ -3,7 +3,8 @@
 import "./utils/global/css/Global.css";
 import { Main } from "./routes/Routing";
 import { UserProvider } from "./utils/provider/UserProvider";
-import { SettingsProvider } from "./utils/provider/SettingsProvider";
+import SettingsProvider from "./utils/provider/SettingsContext";
+
 function App() {
   return (
     <UserProvider>
