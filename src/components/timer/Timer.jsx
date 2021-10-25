@@ -26,7 +26,12 @@ export const Timer = () => {
 
   const openSettings = () => {
     setSettingsOpen(!settingsOpen);
-    setIsActive(false);
+
+    if (isActive && settingsOpen) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
   };
 
   const changeTimer = (value) => {
@@ -57,7 +62,7 @@ export const Timer = () => {
       {settingsOpen && (
         <div className="settings">
           <form>
-            Time:
+            <span className="span-text">Time:</span>
             <input
               className="timer--input"
               type="number"
@@ -65,22 +70,22 @@ export const Timer = () => {
               onChange={(e) => setTimer(e.target.value)}
             />
           </form>
-          <button className="" onClick={() => changeTimer(1)}>
+          <button className="settings--btn" onClick={() => changeTimer(1)}>
             +1
           </button>
-          <button className="" onClick={() => changeTimer(5)}>
+          <button className="settings--btn" onClick={() => changeTimer(5)}>
             +5
           </button>
-          <button className="" onClick={() => changeTimer(10)}>
+          <button className="settings--btn" onClick={() => changeTimer(10)}>
             +10
           </button>
-          <button className="" onClick={() => changeTimer(-1)}>
+          <button className="settings--btn" onClick={() => changeTimer(-1)}>
             - 1
           </button>
-          <button className="" onClick={() => changeTimer(-5)}>
+          <button className="settings--btn" onClick={() => changeTimer(-5)}>
             - 5
           </button>
-          <button className="" onClick={() => changeTimer(-10)}>
+          <button className="settings--btn" onClick={() => changeTimer(-10)}>
             - 10
           </button>
           <p> Write Desired time in input</p>

@@ -25,18 +25,40 @@ button + button {
     margin: 30px 0;
 }
 
+
+
+
+
+
+
+/* Setting styles */
+
 .settings {
-    margin: 10px 0 0 0;
     color: var(--color-off-white);
     background-color: var(--color-red-primary);
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 40px;
+    padding: 20px 0;
 }
 
-.settings input {
-    margin-left: 15px;
-}
 
 .timer--input {
-    margin-left: 10px;
-    margin-right: auto;
-    margin-left: auto;
+    padding: 5px 10px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    margin: 20px 0;
+}
+
+.settings--btn {
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--color-off-white);
+    border-radius: 8px;
+}
+
+.span-text {
+    margin-right: 10px;
 }
