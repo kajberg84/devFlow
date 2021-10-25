@@ -1,0 +1,31 @@
+.footer--wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-ul {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.nav-ul li, .footer--logo {
+    cursor: pointer;
+}
+
+.socials--wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 30px;
+}

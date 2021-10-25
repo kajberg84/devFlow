@@ -1,12 +1,19 @@
-import React from "react";
-import "./Header.css";
+import React, { useContext } from "react";
 import Logo from "../../utils/images/logo.svg";
-import { Button } from "../button/Button";
 import RoutingPath from "../../routes/RoutingPath";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../../utils/provider/UserProvider";
+import "../header/Header.css";
 
-export const Header = () => {
+export const SignedInHeader = () => {
   const history = useHistory();
+  const [authUser, setAuthUser] = useContext(UserContext);
+
+  const logout = () => {
+    localStorage.removeItem("username");
+    setAuthUser(false);
+    history.push(RoutingPath.homePage);
+  };
 
   return (
     <header className="header--container">
@@ -33,11 +40,9 @@ export const Header = () => {
               Pomodoro
             </li>
             <li>
-              <Button
-                customCssClass="btn-primary"
-                text="Sign In"
-                targetPage={RoutingPath.signInPage}
-              />
+              <button className="btn btn-primary" onClick={() => logout()}>
+                Sign Out
+              </button>
             </li>
           </ul>
         </nav>

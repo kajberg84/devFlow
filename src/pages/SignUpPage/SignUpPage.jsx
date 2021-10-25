@@ -7,8 +7,8 @@ import "../SignInPage/SignInPage.css";
 
 export const SignUpPage = () => {
   const history = useHistory();
-  const [username, setUsername] = useState(); // byta till useContext här?
-  const [password, setPassword] = useState(); // byta till useContext här?
+  const [username, setUsername] = useState(); 
+  const [password, setPassword] = useState(); 
   const [authUser, setAuthUser] = useContext(UserContext);
 
   const login = () => {

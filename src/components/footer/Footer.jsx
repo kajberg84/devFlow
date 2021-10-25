@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./Footer.css";
 import { Button } from "../button/Button";
@@ -7,30 +7,19 @@ import Logo from "../../utils/images/logo.svg";
 import Twitter from "../../utils/icons/Twitter.svg";
 import Facebook from "../../utils/icons/Facebook.svg";
 import LinkedIn from "../../utils/icons/LinkedIn.svg";
+import { UserContext } from "../../utils/provider/UserProvider";
 
 export const Footer = () => {
-
   const history = useHistory();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const [authUser, setAuthUser] = useContext(UserContext);
 
-  const [userEmail, setUserEmail] = useState(() => {
-    const localData = localStorage.getItem("username");
-    return localData;
-  });
-  const [userPassword, setUserPassword] = useState(() => {
-    const localData = localStorage.getItem("password");
-    return localData;
-  });
-
-  const handleSignIn = (event) => {
-    event.preventDefault();
-    const signInUserEmail = event.target[0].value;
-    const signInuserPassword = event.target[1].value;
-
-    if (signInUserEmail === userEmail && signInuserPassword === userPassword) {
-      history.push(RoutingPath.dashboardPage);
-    } else {
-      alert("Invalid Email or Password");
-    }
+  const login = () => {
+    setAuthUser(username);
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    history.push(RoutingPath.dashboardPage);
   };
 
   return (
@@ -56,21 +45,27 @@ export const Footer = () => {
           <li>Lorem Ipsum</li>
           <li>Lorem Ipsum</li>
         </ul>
-        <form onSubmit={handleSignIn} className="form--container">
+
+        <form className="form--container">
           <div className="form--wrapper">
             <h5>Sign In</h5>
-            <input type="text" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <Button
-              customCssClass="btn-primary"
-              text="Sign In"
-              targetPage={RoutingPath.signUpPage}
-              className="form--button"
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(event) => setUsername(event.target.value)}
             />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <button className="btn btn-primary" onClick={() => login()}>
+              Sign In
+            </button>
           </div>
         </form>
       </div>
-      <hr className="line"/>
+      <div className="line" />
       <div className="bottom--container">
         <img src={Logo} alt="logo" className="footer--logo" />
         <div className="terms--privacy--container">
