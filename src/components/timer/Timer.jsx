@@ -7,9 +7,6 @@ export const Timer = () => {
   const [timer, setTimer] = useState(25);
   const [isActive, setIsActive] = useState(false);
 
-  // const [timeOut, setTimeOut] = useState(5);
-  // const [isTimeOutActive, setTimeOutIsActive] = useState(false);
-
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
