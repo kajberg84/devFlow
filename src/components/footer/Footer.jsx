@@ -18,7 +18,7 @@ export const Footer = () => {
     setAuthUser(username);
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
-    history.push(RoutingPath.dashboardPage);
+    history.push(RoutingPath.pomodoroPage);
   };
 
   return (
