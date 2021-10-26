@@ -4,14 +4,10 @@ import removeIcon from "../../utils/icons/x-circle.svg";
 import { useHistory } from 'react-router';
 
 
-function Todo({ todos, completeTodo, removeTodo}) {
+function Todo({ todos, completeTodo, removeTodo }) {
 
     const history = useHistory();
 
-    const [edit, setEdit] = useState({
-        id: null,
-        value: ''
-    })
 
     return todos.map((todo, index) => (
         <div 
@@ -22,7 +18,7 @@ function Todo({ todos, completeTodo, removeTodo}) {
                 {todo.text}
             </div>
             <div className="icons">
-            <img src={doneIcon} alt="add" className="todo--icon" />
+            <img src={doneIcon} alt="add" className="todo--icon" onClick={() => completeTodo(todo.id)}/>
             <img src={removeIcon} alt="add" className="todo--icon" onClick={() => removeTodo(todo.id)} />
             </div>
 
