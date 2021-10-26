@@ -42,4 +42,18 @@
     border: none;
     background: none;
   }
-  
+  .complete {
+    font-style: italic;
+    color: lightgray;
+  }
+  .todo--form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .todo--row {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+  }

@@ -18,29 +18,3 @@ export const TodoPage = () => {
 
     )
 }
-
-{/*
-<div className="active--wrapper">
-<h1 className="todo-heading">To-Do</h1>
-<img src={addIcon} alt="add" className="todo--icon" onClick={() => history.push()} />
-</div>
-<div className="item--card">
-<h5>Lorem ipsum</h5>
-<img src={doneIcon} alt="add" className="todo--icon" onClick={() => history.push()} />
-</div>
-<div className="active--wrapper">
-<h1 className="todo--heading">Done</h1>
-</div>
-<div className="item--card">
-<h5>Lorem ipsum</h5>
-<img src={removeIcon} alt="add" className="todo--icon" onClick={() => history.push()} />
-</div>
-<div className="item--card">
-<h5>Lorem ipsum</h5>
-<img src={removeIcon} alt="add" className="todo--icon" onClick={() => history.push()} />
-</div>
-<div className="item--card">
-<h5>Lorem ipsum</h5>
-<img src={removeIcon} alt="add" className="todo--icon" onClick={() => history.push()} />
-</div>
-*/}

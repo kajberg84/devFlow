@@ -21,24 +21,25 @@ function TodoList() {
         setTodos(removeArr)
     }
 
+
     const completeTodo = id => {
         let updatedTodos = todos.map(todo => {
             if(todo.id === id) {
                 todo.isComplete = !todo.isComplete;
             }
+
             return todo;
 
         })
         setTodos(updatedTodos);
+        console.log(updatedTodos)
     }
 
     return (
         <div>
             <h1>To-do</h1>
-            
             <TodoForm onSubmit={addTodo} />
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
-            <h1>Done</h1>
         </div>
     )
 }
