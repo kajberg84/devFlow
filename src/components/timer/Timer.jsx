@@ -45,16 +45,16 @@ export const Timer = () => {
       <h2 className="timer--timer">{timer}</h2>
 
       <button className="btn timer--btn" onClick={() => setIsActive(true)}>
-        Starta
+        Start
       </button>
       <button className="btn timer--btn" onClick={() => setIsActive(false)}>
-        Stoppa
+        Stop
       </button>
       <button className="btn timer--btn" onClick={() => setTimer(5)}>
-        Rast
+        Break
       </button>
       <button className="btn timer--btn" onClick={() => setTimer(25)}>
-        Återställ
+        Reset
       </button>
       <button className="btn timer--btn" onClick={() => openSettings()}>
         Settings
