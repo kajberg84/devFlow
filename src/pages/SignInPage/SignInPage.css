@@ -16,7 +16,7 @@
   flex-direction: column;
 }
 .inputfield {
-  margin-top: 20px;
+  margin-top: 10px;
   box-sizing: border-box;
   outline: none;
   border: none;
@@ -38,4 +38,9 @@
 
 .signIn--title {
   width: 80%;
+}
+
+label {
+  font-size: 1.4rem;
+  color: var(--color-red-primary);
 }
