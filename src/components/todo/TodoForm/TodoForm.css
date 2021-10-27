@@ -1,0 +1,18 @@
+.todo--form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .todo--button {
+    border: none;
+    background: none;
+  }
+
+  .todo--input {
+    border-radius: 50px;
+    border: 2px solid;
+    border-color: var(--color-light-grey);
+    outline: none;
+    padding: 8px;
+  }
