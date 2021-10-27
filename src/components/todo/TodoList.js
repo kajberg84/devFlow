@@ -1,44 +1,49 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Todo from './Todo';
 import TodoForm from './TodoForm';
+
+const LOCAL_STORAGE_KEY = "devflow-todo-list-todos"
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
 
-    const addTodo = todo => {
-        if (!todo.text || /^\s*$/.test(todo.text)) {
-            return;
+    useEffect(() => {
+        const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+        if(storageTodos) {
+            setTodos(storageTodos);
         }
+    }, []);
 
-        const newTodos = [todo, ...todos];
+    useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+    }, [todos])
 
-        setTodos(newTodos)
+    const addTodo = todo => {
+        setTodos([todo, ...todos])
     }
 
     const removeTodo = id => {
-        const removeArr = [...todos].filter(todo => todo.id !== id)
-
-        setTodos(removeArr)
+        setTodos(todos.filter(todo => todo.id !== id));
     }
 
 
     const completeTodo = id => {
-        let updatedTodos = todos.map(todo => {
-            if(todo.id === id) {
-                todo.isComplete = !todo.isComplete;
+        setTodos(todos.map(todo => {
+            if (todo.id === id) {
+                return {
+                    ...todo,
+                    isComplete: !todo.isComplete
+                };
             }
-
             return todo;
-
         })
-        setTodos(updatedTodos);
-        console.log(updatedTodos)
+      );
     }
 
     return (
         <div>
             <h1>To-do</h1>
-            <TodoForm onSubmit={addTodo} />
+            <TodoForm addTodo={addTodo} />
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
         </div>
     )

@@ -5,9 +5,7 @@ import { useHistory } from 'react-router';
 
 
 function Todo({ todos, completeTodo, removeTodo }) {
-
     const history = useHistory();
-
 
     return todos.map((todo, index) => (
         <div 
@@ -15,7 +13,7 @@ function Todo({ todos, completeTodo, removeTodo }) {
           key={index}
         >
             <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-                {todo.text}
+                {todo.value}
             </div>
             <div className="icons">
             <img src={doneIcon} alt="add" className="todo--icon" onClick={() => completeTodo(todo.id)}/>

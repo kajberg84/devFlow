@@ -1,31 +1,35 @@
 import React, {useState} from 'react'
 import addIcon from "../../utils/icons/plus-circle.svg";
 import '../../pages/TodoPage/TodoPage.css'
+import { v4 as uuid } from "uuid";
 
 
-function TodoForm(props) {
-    const [input, setInput] = useState('')
+function TodoForm( { addTodo }) {
+    const [todo, setTodo] = useState({
+        id: "",
+        value: "",
+        isComplete: false
+    })
 
     const handleChange = e => {
-        setInput(e.target.value)
+        setTodo({ ...todo, value: e.target.value})
     }
 
     const handleSubmit = e => {
         e.preventDefault();
 
-        props.onSubmit({
-            id: Math.floor(Math.random() * 10000),
-            text: input
-        });
-        
-        setInput('')
+       if (todo.value.trim()) {
+           addTodo({ ...todo, id: uuid() });
+           setTodo({ ...todo, value: ""});
+       }
     };
+
     return (
         <form className="todo--form" onSubmit={handleSubmit}>
         <input
         type="text"
         placeholder="Add a To-do"
-        value={input}
+        value={todo.value}
         name="text"
         className="todo--input" 
         onChange={handleChange}
