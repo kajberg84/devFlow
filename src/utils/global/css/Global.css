@@ -3,7 +3,7 @@
 @import url(./Variables.css);
 
 /* Poppins regular and bold */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 /* Base styling */
 
@@ -17,11 +17,12 @@
 
 html {
   font-size: 62.5%; /* Makes the root font size to 10px for default browsers */
+  scroll-behavior: smooth; /*Adds smooth scroll behaviour to the scroll */
 }
 
 body {
   font-size: 1.8rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Heading styles */

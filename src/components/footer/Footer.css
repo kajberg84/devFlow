@@ -49,12 +49,12 @@
 }
 
 .socials--container img {
-  width: 3rem;
   margin: 5px;
+  width: 3rem;
 }
 
 .terms--privacy--container a:nth-child(2) {
-  margin: 20px;
+  margin: 30px;
 }
 
 .line {

@@ -26,23 +26,43 @@ export const Footer = () => {
       <div className="footer--nav">
         <ul>
           <h5>Product</h5>
-          <li>Lorem Ipsum</li>
-          <li>Lorem Ipsum</li>
-          <li>Lorem Ipsum</li>
-        </ul>
-
-        <ul>
-          <h5>Information</h5>
-          <li>Lorem Ipsum</li>
-          <li>Lorem Ipsum</li>
-          <li>Lorem Ipsum</li>
+          <li>
+            <a href="#" onClick={() => history.push(RoutingPath.homePage)}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Feedback</a>
+          </li>
         </ul>
 
         <ul>
           <h5>Company</h5>
-          <li>Lorem Ipsum</li>
-          <li>Lorem Ipsum</li>
-          <li>Lorem Ipsum</li>
+          <li>
+            <a href="#">About us</a>
+          </li>
+          <li>
+            <a href="#">Offices</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+
+        <ul>
+          <h5>Learn More</h5>
+          <li>
+            <a href="#">Resources</a>
+          </li>
+          <li>
+            <a href="#">Developers</a>
+          </li>
+          <li>
+            <a href="#">FAQ</a>
+          </li>
         </ul>
 
         <form className="form--container">
@@ -66,7 +86,14 @@ export const Footer = () => {
       </div>
       <div className="line" />
       <div className="bottom--container">
-        <img src={Logo} alt="logo" className="footer--logo" />
+        <a href="#" className="footer--logo">
+          <img
+            src={Logo}
+            alt="logo"
+            onClick={() => history.push(RoutingPath.homePage)}
+          />
+        </a>
+
         <div className="terms--privacy--container">
           <ul>
             <a href="#">Terms</a>
