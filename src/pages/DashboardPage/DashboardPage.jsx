@@ -1,26 +1,33 @@
-import React from 'react'
-import './DashboardPage.css'
-import "../HomePage/HomePage.css";
-import startImage from "../../utils/images/startimage.svg";
+import React from "react";
+import "./DashboardPage.css";
+import dashboardImage from "../../utils/images/dashboard-illustration.svg";
 import { Button } from "../../components/button/Button";
 import RoutingPath from "../../routes/RoutingPath";
 
-
 export const DashboardPage = () => {
   return (
-    <main className="main-container">
-      <div className="main-wrapper">
-        <div className="main-content">
-            <h1>The Productivity tool for developer students.</h1>
-            <Button className="btn-home" customCssClass="btn-primary signIn--button" text="Pomodoro"
-            targetPage={RoutingPath.pomodoroPage} />
-            <Button className="btn-home" customCssClass="btn-primary signIn--button" text="To Do"
-            targetPage={RoutingPath.todoPage} />
+    <main className="dashboard--main-container">
+      <div className="dashboard--main-wrapper">
+        <div className="dashboard--main-content">
+          <h1>Welcome to devFlow.</h1>
+          <div className="dashboard--main-content-buttons">
+            <Button
+              customCssClass="btn-primary signIn--button"
+              text="Pomodoro"
+              targetPage={RoutingPath.pomodoroPage}
+            />
+
+            <Button
+              customCssClass="btn-primary btn-home signIn--button"
+              text="To-Do"
+              targetPage={RoutingPath.todoPage}
+            />
+          </div>
         </div>
         <img
-          src={startImage}
+          src={dashboardImage}
           alt="Person reading a box while sitting on a box"
-          className="mainImage"
+          className="dashboard--img"
         ></img>
       </div>
     </main>

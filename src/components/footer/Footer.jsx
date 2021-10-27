@@ -12,13 +12,30 @@ export const Footer = () => {
   const history = useHistory();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [passwordLabel, setPasswordLabel] = useState();
+  const [emailLabel, setEmailLabel] = useState();
   const [authUser, setAuthUser] = useContext(UserContext);
 
-  const login = () => {
-    setAuthUser(username);
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
-    history.push(RoutingPath.pomodoroPage);
+  const login = (event) => {
+    event.preventDefault();
+    if (username === undefined || password === undefined) {
+      setEmailLabel("Email is required");
+      setPasswordLabel("Password is required");
+    } else {
+      if (username.includes("@")) {
+        if (password.length > 5) {
+          setAuthUser(username);
+          localStorage.setItem("password", password);
+          localStorage.setItem("username", username);
+          history.push(RoutingPath.dashboardPage);
+        } else {
+          setPasswordLabel("The password is too short. Please try again.");
+          setEmailLabel("");
+        }
+      } else {
+        setEmailLabel("Type in a correct email address");
+      }
+    }
   };
 
   return (
@@ -65,7 +82,7 @@ export const Footer = () => {
           </li>
         </ul>
 
-        <form className="form--container">
+        <form onSubmit={login} className="form--container">
           <div className="form--wrapper">
             <h5>Sign In</h5>
             <input
@@ -73,14 +90,14 @@ export const Footer = () => {
               placeholder="Email"
               onChange={(event) => setUsername(event.target.value)}
             />
+            <label>{emailLabel}</label>
             <input
               type="password"
               placeholder="Password"
               onChange={(event) => setPassword(event.target.value)}
             />
-            <button className="btn btn-primary" onClick={() => login()}>
-              Sign In
-            </button>
+            <label>{passwordLabel}</label>
+            <button className="btn btn-primary">Sign In</button>
           </div>
         </form>
       </div>
