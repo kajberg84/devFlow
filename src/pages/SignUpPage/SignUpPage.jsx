@@ -7,15 +7,42 @@ import "../SignInPage/SignInPage.css";
 
 export const SignUpPage = () => {
   const history = useHistory();
-  const [username, setUsername] = useState(); 
-  const [password, setPassword] = useState(); 
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+  const [passwordLabel, setPasswordLabel] = useState();
+  const [emailLabel, setEmailLabel] = useState();
   const [authUser, setAuthUser] = useContext(UserContext);
 
-  const login = () => {
-    setAuthUser(username);
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
-    history.push("/dashboard");
+  const login = (event) => {
+    event.preventDefault();
+
+    if (
+      username === undefined ||
+      password === undefined ||
+      confirmPassword === undefined
+    ) {
+      setEmailLabel("Please type in all fields");
+    } else {
+      if (username.includes("@")) {
+        if (password === confirmPassword) {
+          if (password.length > 5) {
+            setAuthUser(username);
+            localStorage.setItem("password", password);
+            localStorage.setItem("username", username);
+            history.push("/dashboard");
+          } else {
+            setPasswordLabel(
+              "The chosen passoword needs to be 6 characters or more"
+              );
+              setEmailLabel("")
+          }
+        } else {
+          setPasswordLabel("Passwords do not match");
+          setEmailLabel("")
+        }
+      } 
+    }
   };
 
   return (
@@ -31,7 +58,7 @@ export const SignUpPage = () => {
           Sign In
         </p>
 
-        <form className="form--inputs">
+        <form onSubmit={login} className="form--inputs">
           <input
             onChange={(event) => setUsername(event.target.value)}
             type="email"
@@ -39,23 +66,24 @@ export const SignUpPage = () => {
             name="email"
             placeholder="E-mail..."
           />
+          <label htmlFor="">{emailLabel}</label>
           <input
             type="password"
             onChange={(event) => setPassword(event.target.value)}
             className="inputfield"
             name="password"
-            placeholder="Password.."
+            placeholder="Password..."
           />
+          <label htmlFor="">{passwordLabel}</label>
           <input
             type="password"
+            onChange={(event) => setConfirmPassword(event.target.value)}
             className="inputfield"
             name="confirmPassword"
             placeholder="Confirm Password.."
           />
           <p>Forgot password?</p>
-          <button className="btn btn-primary" onClick={() => login()}>
-            Sign Up
-          </button>
+          <button className="btn btn-primary">Sign Up</button>
         </form>
       </div>
     </div>
