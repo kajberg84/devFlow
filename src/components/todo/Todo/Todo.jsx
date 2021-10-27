@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import doneIcon from "../../utils/icons/check-circle.svg";
-import removeIcon from "../../utils/icons/x-circle.svg";
+import doneIcon from "../../../utils/icons/check-circle.svg";
+import removeIcon from "../../../utils/icons/x-circle.svg";
 import { useHistory } from 'react-router';
+import './Todo.css'
 
 
 function Todo({ todos, completeTodo, removeTodo }) {
@@ -12,10 +13,10 @@ function Todo({ todos, completeTodo, removeTodo }) {
           className={todo.isComplete ? 'todo--row complete' : 'todo--row'}
           key={index}
         >
-            <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+            <div className="todo--text" key={todo.id} onClick={() => completeTodo(todo.id)}>
                 {todo.value}
             </div>
-            <div className="icons">
+            <div className="todo--icons">
             <img src={doneIcon} alt="add" className="todo--icon" onClick={() => completeTodo(todo.id)}/>
             <img src={removeIcon} alt="add" className="todo--icon" onClick={() => removeTodo(todo.id)} />
             </div>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import addIcon from "../../utils/icons/plus-circle.svg";
-import '../../pages/TodoPage/TodoPage.css'
+import addIcon from "../../../utils/icons/plus-circle.svg";
+import './TodoForm.css'
 import { v4 as uuid } from "uuid";
 
 

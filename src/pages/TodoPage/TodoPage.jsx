@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./TodoPage.css";
 import RoutingPath from "../../routes/RoutingPath";
 
-import TodoList from "../../components/todo/TodoList";
+import TodoList from "../../components/todo/TodoList/TodoList.jsx";
 
 
 export const TodoPage = () => {

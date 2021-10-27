@@ -1,0 +1,10 @@
+.todo--form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .todo--button {
+    border: none;
+    background: none;
+  }

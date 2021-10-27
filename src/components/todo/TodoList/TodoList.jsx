@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Todo from './Todo';
-import TodoForm from './TodoForm';
+import Todo from '../Todo/Todo.jsx';
+import TodoForm from '../TodoForm/TodoForm';
 
 const LOCAL_STORAGE_KEY = "devflow-todo-list-todos"
 
@@ -26,13 +26,12 @@ function TodoList() {
         setTodos(todos.filter(todo => todo.id !== id));
     }
 
-
     const completeTodo = id => {
         setTodos(todos.map(todo => {
             if (todo.id === id) {
                 return {
                     ...todo,
-                    isComplete: !todo.isComplete
+                    isComplete: !todo.isComplete,
                 };
             }
             return todo;
@@ -45,6 +44,7 @@ function TodoList() {
             <h1>To-do</h1>
             <TodoForm addTodo={addTodo} />
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
+            <h1>Done</h1>
         </div>
     )
 }
