@@ -44,7 +44,6 @@ function TodoList() {
             <h1>To-do</h1>
             <TodoForm addTodo={addTodo} />
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
-            <h1>Done</h1>
         </div>
     )
 }
